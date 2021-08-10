@@ -1,0 +1,15 @@
+<%= render "articles/navbar" %>
+<div class="container">
+  <div class="d-flex justify-content-between">
+    <h1><%= @article.title %></h1>
+    <div class="d-flex">
+      <%= link_to edit_article_path(@article) do %>
+        <h1 class="me-3"><%= icon('fas', 'edit') %></h1>
+      <% end %>
+      <%= link_to articles_path(@article), method: "delete" do %>
+        <h1><%= icon('fas', 'trash-alt') %></h1>
+      <% end %>
+    </div>
+  </div>
+  <h2><%= @article.content %></h2>
+</div>

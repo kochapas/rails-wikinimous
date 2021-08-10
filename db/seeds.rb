@@ -6,8 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-puts 'Seeding...'
+puts 'Destroy old data (if exists)... 🚮'
+Article.destroy_all
+puts 'Seeding... 🌲'
 20.times do
-  Article.create(title:Faker::Book.title, content: Faker::Quote.famous_last_words)
+  Article.create(title: Faker::Book.title, content: Faker::ChuckNorris.fact)
 end
-puts "Seed #{Articles.count} article"
+puts "Seed #{Article.count} article(s)! 🎆"
