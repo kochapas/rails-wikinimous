@@ -1,0 +1,19 @@
+<nav class="navbar navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand text-secondary" href="#">Wikinimous</a>
+    <a class="navbar-brand text-secondary" href="#">New article</a>
+  </div>
+</nav>
+<div class="container">
+  <% i = 0 %>
+  <% @articles.each do |article| %>
+  <div class="card-product my-3">
+    <img src="https://picsum.photos/300/300?random=<%= i.to_s %>" />
+    <div class="card-product-infos">
+      <h2><%= article.title %></h2>
+      <p><%= article.content %></p>
+    </div>
+  </div>
+  <% i += 1 %>
+  <% end %>
+</div>
